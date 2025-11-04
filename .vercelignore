@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+
+# Development files
+.git
+.github
+.vscode
+.idea
+
+# Documentation (optional - remove these lines if you want docs deployed)
+*.md
+!README.md
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Config files
+.eslintrc.*
+.prettierrc
+.editorconfig
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spec files
+.kiro
