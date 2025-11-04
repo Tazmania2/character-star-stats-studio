@@ -129,7 +129,7 @@ export class FunifierAPIService {
    */
   async getAreas(): Promise<Area[]> {
     try {
-      const response = await this.axiosInstance.get<Area[]>('/v3/characterstarstats');
+      const response = await this.axiosInstance.get<Area[]>('/v3/characterstarstats/area');
       
       // Ensure response is an array
       if (!Array.isArray(response.data)) {

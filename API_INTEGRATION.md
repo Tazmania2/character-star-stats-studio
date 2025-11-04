@@ -24,7 +24,7 @@ The token is configured during the initial authentication flow and stored secure
 
 #### List All Areas
 ```http
-GET /v3/characterstarstats
+GET /v3/characterstarstats/area
 ```
 
 **Response:**
@@ -406,7 +406,7 @@ Show loading indicators during API calls to improve user experience.
 Test authentication:
 ```bash
 curl -H "Authorization: Bearer YOUR_TOKEN" \
-  https://service2.funifier.com/v3/characterstarstats
+  https://service2.funifier.com/v3/characterstarstats/area
 ```
 
 Create an area:
