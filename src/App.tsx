@@ -141,7 +141,7 @@ function App() {
         {/* Sidebar - Management Panel */}
         <aside
           className={`
-            bg-white border-r border-gray-200 w-80 flex-shrink-0 overflow-y-auto
+            bg-green-200 border-r border-gray-200 w-80 flex-shrink-0 overflow-y-auto
             transition-transform duration-300 ease-in-out
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
             lg:translate-x-0
@@ -173,8 +173,8 @@ function App() {
         </aside>
 
         {/* Main Content - Visualization */}
-        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6 lg:ml-0">
-          <div className="h-full bg-white rounded-lg shadow-sm border border-gray-200 p-2 sm:p-4">
+        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6 lg:ml-0 bg-pink-100">
+          <div className="h-full bg-pink-200 rounded-lg shadow-sm border border-gray-200 p-2 sm:p-4">
             {areas.length === 0 ? (
               <div className="h-full flex items-center justify-center text-gray-500">
                 <div className="text-center">

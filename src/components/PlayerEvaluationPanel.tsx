@@ -50,7 +50,7 @@ export function PlayerEvaluationPanel({ onPlayerStatsChange }: PlayerEvaluationP
   };
 
   return (
-    <div className="p-4 bg-white">
+    <div className="p-4 bg-green-500">
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Player Evaluation</h2>
 
       <form onSubmit={handleEvaluate} className="mb-4">
