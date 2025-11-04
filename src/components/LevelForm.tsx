@@ -156,8 +156,8 @@ export function LevelForm({ isOpen, onClose, onSuccess, selectedAreaId, editLeve
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto z-[9999]">
-      <div className="bg-blue-300 rounded-lg shadow-xl max-w-md w-full my-8">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto" style={{ zIndex: 9999 }}>
+      <div className="rounded-lg shadow-xl max-w-md w-full my-8" style={{ backgroundColor: '#93c5fd' }}>
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-900">
             {editLevel ? 'Edit Level' : 'Create New Level'}

@@ -141,14 +141,14 @@ function App() {
         {/* Sidebar - Management Panel */}
         <aside
           className={`
-            bg-green-200 border-r border-gray-200 w-80 flex-shrink-0 overflow-y-auto
+            border-r border-gray-200 w-80 flex-shrink-0 overflow-y-auto
             transition-transform duration-300 ease-in-out
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
             lg:translate-x-0
             fixed lg:static inset-y-0 left-0 z-30 lg:z-0
             top-[57px] lg:top-0
           `}
-          style={{ height: 'calc(100vh - 57px)' }}
+          style={{ height: 'calc(100vh - 57px)', backgroundColor: '#86efac' }}
         >
           <div className="divide-y divide-gray-200">
             {/* Areas Section */}
@@ -173,8 +173,8 @@ function App() {
         </aside>
 
         {/* Main Content - Visualization */}
-        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6 lg:ml-0 bg-pink-100">
-          <div className="h-full bg-pink-200 rounded-lg shadow-sm border border-gray-200 p-2 sm:p-4">
+        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6 lg:ml-0" style={{ backgroundColor: '#fce7f3' }}>
+          <div className="h-full rounded-lg shadow-sm border border-gray-200 p-2 sm:p-4" style={{ backgroundColor: '#fbcfe8' }}>
             {areas.length === 0 ? (
               <div className="h-full flex items-center justify-center text-gray-500">
                 <div className="text-center">

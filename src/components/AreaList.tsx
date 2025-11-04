@@ -115,7 +115,7 @@ export function AreaList({ selectedAreaId, onAreaSelect, onCreateArea, onAreasCh
   }
 
   return (
-    <div className="p-4 bg-green-300">
+    <div className="p-4" style={{ backgroundColor: '#86efac' }}>
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">Areas</h2>
         <button
