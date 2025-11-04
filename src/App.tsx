@@ -137,16 +137,18 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden relative">
         {/* Sidebar - Management Panel */}
         <aside
           className={`
-            bg-white border-r border-gray-200 w-full sm:w-96 md:w-80 flex-shrink-0 overflow-y-auto
+            bg-white border-r border-gray-200 w-80 flex-shrink-0 overflow-y-auto
             transition-transform duration-300 ease-in-out
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
             lg:translate-x-0
-            absolute lg:relative h-full z-10
+            fixed lg:static inset-y-0 left-0 z-30 lg:z-0
+            top-[57px] lg:top-0
           `}
+          style={{ height: 'calc(100vh - 57px)' }}
         >
           <div className="divide-y divide-gray-200">
             {/* Areas Section */}
@@ -171,7 +173,7 @@ function App() {
         </aside>
 
         {/* Main Content - Visualization */}
-        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6">
+        <main className="flex-1 overflow-hidden p-2 sm:p-4 lg:p-6 lg:ml-0">
           <div className="h-full bg-white rounded-lg shadow-sm border border-gray-200 p-2 sm:p-4">
             {areas.length === 0 ? (
               <div className="h-full flex items-center justify-center text-gray-500">
@@ -203,9 +205,17 @@ function App() {
             )}
           </div>
         </main>
+
+        {/* Overlay for mobile sidebar */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
       </div>
 
-      {/* Modals */}
+      {/* Modals - High z-index to appear above everything */}
       <AreaForm
         isOpen={isAreaFormOpen}
         onClose={() => setIsAreaFormOpen(false)}
@@ -222,14 +232,6 @@ function App() {
         selectedAreaId={selectedAreaId}
         editLevel={editingLevel}
       />
-
-      {/* Overlay for mobile sidebar */}
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-0 lg:hidden"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
 
       {/* Logout Confirmation */}
       <ConfirmDialog
