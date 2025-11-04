@@ -103,7 +103,7 @@ export function PlayerEvaluationPanel({ onPlayerStatsChange }: PlayerEvaluationP
             </h3>
           </div>
 
-          {playerStats.stats.length === 0 ? (
+          {!Array.isArray(playerStats.stats) || playerStats.stats.length === 0 ? (
             <div className="p-8 text-center text-gray-500">
               <p>No stats available for this player</p>
             </div>
@@ -127,7 +127,7 @@ export function PlayerEvaluationPanel({ onPlayerStatsChange }: PlayerEvaluationP
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {playerStats.stats.map((stat, index) => (
+                  {Array.isArray(playerStats.stats) && playerStats.stats.map((stat, index) => (
                     <tr key={index} className="hover:bg-gray-50">
                       <td className="px-4 py-3 text-sm font-medium text-gray-900">
                         {stat.area}
@@ -164,7 +164,7 @@ export function PlayerEvaluationPanel({ onPlayerStatsChange }: PlayerEvaluationP
 
           <div className="p-4 border-t border-gray-200 bg-gray-50 text-sm text-gray-600">
             <p>
-              Total Areas: <span className="font-medium">{playerStats.stats.length}</span>
+              Total Areas: <span className="font-medium">{Array.isArray(playerStats.stats) ? playerStats.stats.length : 0}</span>
             </p>
           </div>
         </div>

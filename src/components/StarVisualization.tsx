@@ -367,6 +367,12 @@ function drawPlayerProgress(
   
   if (points.length === 0) return;
 
+  // Validate that playerStats has a stats array
+  if (!playerStats || !Array.isArray(playerStats.stats)) {
+    console.error('Invalid playerStats format:', playerStats);
+    return;
+  }
+
   // Create a map of area stats for quick lookup
   const statsMap = new Map(
     playerStats.stats.map(stat => [stat.area, stat])

@@ -130,6 +130,13 @@ export class FunifierAPIService {
   async getAreas(): Promise<Area[]> {
     try {
       const response = await this.axiosInstance.get<Area[]>('/v3/characterstarstats');
+      
+      // Ensure response is an array
+      if (!Array.isArray(response.data)) {
+        console.error('Invalid areas response format:', response.data);
+        return [];
+      }
+      
       return response.data;
     } catch (error) {
       throw this.transformError(error);
@@ -189,6 +196,13 @@ export class FunifierAPIService {
       const response = await this.axiosInstance.get<Level[]>('/v3/characterstarstats/level', {
         params,
       });
+      
+      // Ensure response is an array
+      if (!Array.isArray(response.data)) {
+        console.error('Invalid levels response format:', response.data);
+        return [];
+      }
+      
       return response.data;
     } catch (error) {
       throw this.transformError(error);
@@ -248,6 +262,26 @@ export class FunifierAPIService {
       const response = await this.axiosInstance.get<PlayerStats>(
         `/v3/characterstarstats/player/${playerId}`
       );
+      
+      // Log the response for debugging
+      console.log('Player stats response:', response.data);
+      
+      // Validate response structure
+      if (!response.data || typeof response.data !== 'object') {
+        throw new ValidationError('Invalid response format from API');
+      }
+      
+      // Ensure stats is an array
+      if (!Array.isArray(response.data.stats)) {
+        console.error('Invalid stats format:', response.data);
+        // Try to fix common issues
+        if (response.data.stats === null || response.data.stats === undefined) {
+          response.data.stats = [];
+        } else {
+          throw new ValidationError('Player stats must be an array');
+        }
+      }
+      
       return response.data;
     } catch (error) {
       throw this.transformError(error);
