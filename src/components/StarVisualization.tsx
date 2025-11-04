@@ -210,23 +210,24 @@ function drawStar(
     .attr('stroke', '#fff')
     .attr('stroke-width', 2);
 
-  // Add area labels
+  // Add area labels with better positioning
   areaGroups.append('text')
     .attr('class', 'area-label')
     .attr('x', d => {
-      // Position label outside the point
-      const offset = 20;
+      // Position label further outside the point
+      const offset = 30;
       return d.x + offset * Math.cos(d.angle);
     })
     .attr('y', d => {
-      const offset = 20;
+      const offset = 30;
       return d.y + offset * Math.sin(d.angle);
     })
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')
     .attr('fill', '#1e293b')
-    .attr('font-size', '12px')
+    .attr('font-size', '14px')
     .attr('font-weight', '600')
+    .style('pointer-events', 'none')
     .text(d => d.area.title);
 
   // Add hover and touch effects
@@ -333,9 +334,10 @@ function showTooltip(
     .attr('width', bbox.width + 16)
     .attr('height', bbox.height + 8)
     .attr('fill', 'white')
-    .attr('stroke', '#e2e8f0')
-    .attr('stroke-width', 1)
-    .attr('rx', 4);
+    .attr('stroke', '#cbd5e1')
+    .attr('stroke-width', 2)
+    .attr('rx', 6)
+    .style('filter', 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))');
 }
 
 /**

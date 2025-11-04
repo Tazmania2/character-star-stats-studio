@@ -84,7 +84,7 @@ export function LevelList({ selectedAreaId, onCreateLevel, onEditLevel, onLevels
   // Empty state when no area is selected
   if (!selectedAreaId) {
     return (
-      <div className="p-4">
+      <div className="p-4 bg-white">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Levels</h2>
         <div className="text-center py-12 text-gray-500">
           <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export function LevelList({ selectedAreaId, onCreateLevel, onEditLevel, onLevels
 
   if (loading) {
     return (
-      <div className="p-4">
+      <div className="p-4 bg-white">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Levels</h2>
         <div className="flex items-center justify-center py-8">
           <LoadingSpinner />
@@ -109,7 +109,7 @@ export function LevelList({ selectedAreaId, onCreateLevel, onEditLevel, onLevels
 
   if (error) {
     return (
-      <div className="p-4">
+      <div className="p-4 bg-white">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Levels</h2>
         <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
           <p className="font-medium">Error loading levels</p>
@@ -126,12 +126,12 @@ export function LevelList({ selectedAreaId, onCreateLevel, onEditLevel, onLevels
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-white">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">Levels</h2>
         <button
           onClick={onCreateLevel}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
         >
           Create Level
         </button>

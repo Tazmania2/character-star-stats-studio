@@ -115,12 +115,12 @@ export function AreaList({ selectedAreaId, onAreaSelect, onCreateArea, onAreasCh
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-white">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-gray-900">Areas</h2>
         <button
           onClick={onCreateArea}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
         >
           Create Area
         </button>
